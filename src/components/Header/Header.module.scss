@@ -1,0 +1,148 @@
+.header {
+  $this: &;
+
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  &_inner {
+    position: relative;
+    display: flex;
+    column-gap: 32px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px;
+    background-color: #fbfbfb;
+    border: solid 1px #8e8e8e;
+    border-radius: 50px;
+
+    @media (width >= 740px) {
+      margin-top: 32px;
+    }
+
+    @media (width <= 739.98px) {
+      margin-top: 24px;
+    }
+
+    @media (width <= 1199.98px) {
+      &::before {
+        position: absolute;
+        inset: -1px;
+        z-index: 2;
+        visibility: hidden;
+        content: '';
+        background-color: rgba(0, 0, 0, 50%);
+        border-radius: inherit;
+        opacity: 0;
+        transition: all 150ms ease-in-out;
+      }
+
+      &:has(#{$this}_nav.open) {
+        &::before {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &_logo {
+    margin-right: auto;
+  }
+
+  &_nav {
+    margin-inline: auto;
+
+    @media (width <= 1199.98px) {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      z-index: 3;
+      display: grid;
+      row-gap: 36px;
+      width: min(100% + 2px, 444px);
+      padding: 24px;
+      visibility: hidden;
+      background-color: #fbfbfb;
+      border: solid 1px #8e8e8e;
+      border-radius: 15px;
+      opacity: 0;
+      transition: all 150ms ease-in-out;
+
+      &.open {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    &_top {
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+
+      @media (width >= 1200px) {
+        display: none;
+      }
+    }
+
+    &_bottom {
+      display: grid;
+      row-gap: 32px;
+
+      @media (width >= 740px) {
+        display: none;
+      }
+    }
+
+    &_lang {
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 32px;
+      justify-content: start;
+
+      a {
+        padding: 4px;
+        margin: -4px;
+        font-family: var(--font-montserrat-alternates), sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+
+        &:hover,
+        &:focus-visible {
+          color: #eb1e23;
+        }
+      }
+    }
+  }
+
+  &_lang,
+  &_btn {
+    @media (width <= 739.98px) {
+      display: none;
+    }
+  }
+
+  &_btn {
+    min-width: 143px;
+  }
+
+  &_hamb {
+    font-size: 32px;
+
+    @media (width >= 1200px) {
+      display: none;
+    }
+  }
+
+  &_close {
+    font-size: 32px;
+    transition: color 250ms ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      color: #8e8e8e;
+    }
+  }
+}

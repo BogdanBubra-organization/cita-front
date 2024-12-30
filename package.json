@@ -1,0 +1,38 @@
+{
+  "name": "cita",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.2",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "aos": "^2.3.4",
+    "clsx": "^2.1.1",
+    "gsap": "^3.12.5",
+    "next": "15.0.4",
+    "next-intl": "^3.26.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.1",
+    "sharp": "^0.33.5",
+    "stylelint": "^16.11.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-prettier": "^5.0.2"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.37.2",
+    "nano-staged": "^0.8.0",
+    "prettier": "^3.4.2",
+    "sass": "^1.82.0"
+  }
+}

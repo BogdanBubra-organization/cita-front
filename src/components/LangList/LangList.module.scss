@@ -1,0 +1,39 @@
+.langList {
+  display: grid;
+  font-family: var(--font-montserrat-alternates), sans-serif;
+  text-align: center;
+
+  @media (width >= 740px) {
+    row-gap: 12px;
+    padding: 8px 24px;
+    background-color: #fbfbfb;
+    backdrop-filter: blur(4px);
+    border: solid 1px #8e8e8e;
+    border-radius: 15px;
+  }
+
+  @media (width <= 739.98px) {
+    grid-auto-flow: column;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: start;
+    margin: -7px -11px;
+  }
+
+  &_item {
+    display: block;
+    padding: 7px 11px;
+    font-weight: 500;
+    transition: color 0.15s ease-in-out;
+
+    &:hover,
+    &:focus-visible,
+    &[disabled] {
+      color: #eb1e23;
+    }
+
+    &[disabled] {
+      font-weight: 600;
+    }
+  }
+}

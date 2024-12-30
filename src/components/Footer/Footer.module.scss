@@ -1,0 +1,115 @@
+.footer {
+  padding-block: 100px 24px;
+  margin-top: auto;
+  background-color: #000;
+
+  &_top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: solid 1px #f5f5f5;
+  }
+
+  &_slogan {
+    flex-shrink: 1;
+    min-width: min(100%, 300px);
+    font-weight: 600;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    text-wrap: balance;
+    letter-spacing: normal;
+
+    @media (width >= 740px) {
+      font-size: 41px;
+    }
+
+    @media (width >= 1200px) {
+      max-width: min(75%, 936px);
+    }
+
+    @media (width <= 739.98px) {
+      font-size: 36px;
+    }
+
+    strong {
+      color: #eb1e23;
+    }
+
+    br {
+      @media (width <= 1199.98px) {
+        display: none;
+      }
+    }
+  }
+
+  &_info {
+    display: grid;
+    row-gap: 12px;
+    justify-items: end;
+    margin-left: auto;
+  }
+
+  &_links {
+    display: grid;
+    row-gap: 12px;
+    justify-items: end;
+    font-size: 14px;
+    font-weight: 500;
+
+    a {
+      display: block;
+      padding: 4px;
+      margin: -4px;
+      color: #b9b9b9;
+
+      &:hover,
+      &:focus-visible {
+        color: #fff;
+      }
+    }
+  }
+
+  &_payments {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  &_bottom {
+    display: flex;
+
+    @media (width >= 1024px) {
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @media (width <= 1023.98px) {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &_legal {
+    margin-top: 32px;
+  }
+
+  &_logo {
+    @media (width <= 739.98px) {
+      display: none;
+    }
+  }
+
+  &_copy {
+    font-size: 14px;
+    font-weight: 500;
+    color: #b9b9b9;
+    letter-spacing: normal;
+  }
+}

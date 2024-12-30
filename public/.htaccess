@@ -1,0 +1,13 @@
+AddDefaultCharset UTF-8
+DirectoryIndex index.html
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.html [L,QSA]
+
+<FilesMatch ".(htaccess|htpasswd|ini|phps|fla|log|sh|tpl)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

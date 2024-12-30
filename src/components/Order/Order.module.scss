@@ -1,0 +1,29 @@
+.order {
+  display: grid;
+
+  @media (width >= 740px) {
+    gap: 24px;
+  }
+
+  @media (width <= 739.98px) {
+    row-gap: 12px;
+  }
+
+  @media (width >= 1200px) {
+    grid-template-columns: repeat(2, 552px);
+    place-content: start space-between;
+  }
+
+  &_content {
+    display: grid;
+    align-content: start;
+
+    @media (width >= 740px) {
+      row-gap: 24px;
+    }
+
+    @media (width <= 739.98px) {
+      row-gap: 12px;
+    }
+  }
+}
