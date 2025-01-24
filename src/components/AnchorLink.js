@@ -4,7 +4,7 @@ import React from 'react'
 import { handleScroll } from '@/utils/handleScroll'
 import { routing, usePathname } from '@/i18n/routing'
 
-const AnchorLink = ({ label, link, handleClose, className }) => {
+const AnchorLink = ({ label, link, isExternal = false, handleClose, className }) => {
   const { locales, defaultLocale } = routing
   const pathname = usePathname()
 
@@ -15,7 +15,8 @@ const AnchorLink = ({ label, link, handleClose, className }) => {
   )
 
   const handleClick = (e) => {
-    isHomepage && handleScroll(e, link)
+    if (!isExternal)
+      isHomepage && handleScroll(e, link)
     handleClose && handleClose()
   }
 
@@ -24,6 +25,7 @@ const AnchorLink = ({ label, link, handleClose, className }) => {
       href={isHomepage ? link : `/${link}`}
       onClick={handleClick}
       className={className}
+      target={isExternal ? "_blank" : ""}
     >
       {label}
     </a>

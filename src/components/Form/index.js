@@ -33,8 +33,8 @@ const sendTelegramMessage = async (data) => {
       body: JSON.stringify({ text: message }),
     })
 
-    if (response.message !== 'action_success') {
-      console.error('Failed to send Telegram message:', response.statusText)
+    if (response.error) {
+      console.error('Failed to send Telegram message:', response.error)
     }
   } catch (error) {
     console.error('Could not send a message to Telegram:', error)
@@ -44,7 +44,13 @@ const sendTelegramMessage = async (data) => {
 const getDependentOptions = (type, id) => {
   switch (type) {
     case 'services':
-      return officeServices.filter((service) => service.cityId === id)
+      return officeServices
+          .filter((service) => service.cityId === id)
+          .filter((value, index, self) =>
+                  index === self.findIndex((t) => (
+                      t.serviceId === value.serviceId
+                  ))
+          )
     default:
       return []
   }

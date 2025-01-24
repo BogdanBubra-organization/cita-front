@@ -1,6 +1,5 @@
 import React from 'react'
 import { useTranslations } from 'next-intl'
-import Iframe from 'react-iframe'
 
 const Offer = () => {
   const t = useTranslations('Offer')
@@ -14,13 +13,10 @@ const Offer = () => {
       {/*  className="simple-content"*/}
       {/*/>*/}
 
-        <Iframe url="https://api.citamaster.com/web/service-terms"
-                width="100%"
-                height="800px"
-                id=""
-                className=""
-                display="block"
-                position="relative"/>
+      <object data="https://api.citamaster.com/uploads/oferta.pdf" type="application/pdf" width="100%" height="1000px">
+        <p><a style={{textDecoration: "underline"}} href='https://api.citamaster.com/web/service-terms'>{t('url')}</a></p>
+      </object>
+
     </section>
   )
 }

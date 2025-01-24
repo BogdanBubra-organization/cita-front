@@ -26,6 +26,11 @@ const Menu = ({ handleClose, variant }) => {
       label: t('faq'),
       link: '#faq',
     },
+    {
+      label: t('reviews'),
+      link: 'https://maps.app.goo.gl/EVs9ikdPnU2ZyQFT8',
+      isExternal: true
+    }
   ]
 
   return (
