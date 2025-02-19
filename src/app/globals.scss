@@ -313,6 +313,12 @@ section {
   }
 }
 
+.simple-content {
+  &--centered {
+    text-align: center;
+  }
+}
+
 .container {
   width: min(100%, 1368px);
   padding-inline: var(--container-padding);

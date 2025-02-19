@@ -1,10 +1,10 @@
-.coockies {
+.cookies {
   position: fixed;
   inset-inline: 0;
   bottom: var(--container-padding);
   z-index: 5;
   display: grid;
-  row-gap: 8px;
+  gap: 15px;
   width: min(100% - var(--container-padding) * 2, 1368px);
   padding-block: 15px;
   margin-inline: auto;
@@ -18,6 +18,11 @@
   transition:
     opacity 150ms ease-in-out,
     visibility 150ms ease-in-out;
+
+  @media (width >= 740px) {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
 
   @media (width >= 1200px) {
     padding-inline: 60px;
@@ -39,6 +44,12 @@
     opacity: 1;
   }
 
+  &_content {
+    display: grid;
+    row-gap: 8px;
+    align-content: start;
+  }
+
   &_title {
     display: grid;
     grid-auto-flow: column;
@@ -48,8 +59,17 @@
     font-weight: 600;
   }
 
+  &_btns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
   &_btn {
-    font-size: 32px;
+    padding-inline: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
     transition: color 250ms ease-in-out;
 
     &:hover,
