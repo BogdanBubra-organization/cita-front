@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
-import { Link } from '@/i18n/routing'
+import { Link, useRouter } from '@/i18n/routing'
 import { useForm } from 'react-hook-form'
 import Button from '../Button'
 import Field from './components/Field'
@@ -11,7 +11,7 @@ import LINKS from '@/constants/links'
 import cities from '@/data/cities.json'
 import officeServices from '@/data/officeServices.json'
 import s from './Form.module.scss'
-import { BACKEND_API_URL } from "@/constants/constants";
+import { BACKEND_API_URL } from '@/constants/constants'
 
 const formatTelegramMessage = (data) => {
   let message = 'Нова заявка:\n'
@@ -45,12 +45,11 @@ const getDependentOptions = (type, id) => {
   switch (type) {
     case 'services':
       return officeServices
-          .filter((service) => service.cityId === id)
-          .filter((value, index, self) =>
-                  index === self.findIndex((t) => (
-                      t.serviceId === value.serviceId
-                  ))
-          )
+        .filter((service) => service.cityId === id)
+        .filter(
+          (value, index, self) =>
+            index === self.findIndex((t) => t.serviceId === value.serviceId)
+        )
     default:
       return []
   }
@@ -59,6 +58,8 @@ const getDependentOptions = (type, id) => {
 const Form = ({ variant, handleClose }) => {
   const [submitting, setSubmitting] = useState(false)
   const [succeeded, setSucceeded] = useState(false)
+
+  const router = useRouter()
 
   const {
     register,
@@ -86,7 +87,6 @@ const Form = ({ variant, handleClose }) => {
     const city = cities.find((city) => city.id === updatedData.city)
     if (city) updatedData.city = city.name
 
-
     const service = officeServices.find(
       (service) => service.serviceId === updatedData.service
     )
@@ -109,8 +109,10 @@ const Form = ({ variant, handleClose }) => {
 
     try {
       await sendTelegramMessage(filteredData)
-      setSucceeded(true)
-      setTimeout(handleReset, 5000)
+      // setSucceeded(true)
+      // setTimeout(handleReset, 5000)
+      handleReset()
+      router.push('/thankyou')
     } catch (error) {
       console.error('An error occurred while submitting the form:', error)
     } finally {

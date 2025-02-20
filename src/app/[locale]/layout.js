@@ -8,7 +8,7 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { Montserrat, Montserrat_Alternates } from 'next/font/google'
 import Header from '@/components/Header'
-import Coockies from '@/components/Coockies'
+import Cookies from '@/components/Cookies'
 import Footer from '@/components/Footer'
 import { AOSInit } from '@/components/AOS'
 import '../globals.scss'
@@ -77,7 +77,7 @@ export default async function RootLayout({ children, params }) {
           <Header />
           <main>{children}</main>
           <Footer />
-          <Coockies />
+          <Cookies />
         </NextIntlClientProvider>
       </body>
     </html>
