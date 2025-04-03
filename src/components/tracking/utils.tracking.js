@@ -1,13 +1,13 @@
 'use client'
 
-import { GTM_ID } from '@/constants/constants'
+import { GTM_IDS } from '@/constants/constants'
 
 const logGAWarning = (message) => {
   console.warn(message)
 }
 
 const getGtag = () => {
-  if (!GTM_ID) {
+  if (!GTM_IDS || GTM_IDS.length === 0) {
     logGAWarning('Google Analytics is not enabled')
     return null
   }
@@ -21,16 +21,22 @@ const getGtag = () => {
 export const grantConsentForEverything = () => {
   const gtag = getGtag()
   if (!gtag) return
-  gtag('consent', 'update', {
-    ad_storage: 'granted',
-    analytics_storage: 'granted',
+
+  GTM_IDS.forEach((id) => {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      analytics_storage: 'granted',
+    })
   })
 }
 
 export const pageview = (url) => {
   const gtag = getGtag()
   if (!gtag) return
-  gtag('config', GTM_ID, {
-    page_path: url,
+
+  GTM_IDS.forEach((id) => {
+    gtag('config', id, {
+      page_path: url,
+    })
   })
 }
