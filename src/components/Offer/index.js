@@ -9,7 +9,7 @@ const Offer = () => {
       <h1 className="h2">{t('title')}</h1>
 
         <iframe
-            src="https://api.citamaster.com/uploads/oferta.html?v=1.4"
+            src="https://api.citamaster.com/web/oferta/8c87d208-5d01-402c-b606-1d7f3425c827?v=1"
             width="100%"
             height="1000px"
             style={{padding: '16px', border: '1px solid #8e8e8e', borderRadius: '50px'}}
