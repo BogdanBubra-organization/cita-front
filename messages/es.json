@@ -21,7 +21,7 @@
   },
   "Metadata": {
     "title": "Cita Master",
-    "descr": "Tu cita garantizada con los servicios de inmigración en España"
+    "descr": "Asistencia Profesional en Trámites de Visa"
   },
   "Menu": {
     "about": "Sobre nosotros",
@@ -31,7 +31,7 @@
     "reviews": "Testimonios"
   },
   "Hero": {
-    "title": "Tu cita garantizada con los servicios de Footer en España",
+    "title": "Asistencia Profesional en Trámites de Visa",
     "descr": [
       "Ofrecemos servicios de visado a nuestros clientes, que incluyen: asesoramiento, ayuda en la preparación de documentos y asistencia en la gestión de citas en línea para los servicios de extranjería, con acompañamiento posterior durante la presentación de los documentos. En un momento en el que cada minuto puede ser importante, nuestro servicio le libera de días de espera, estrés e incertidumbre.",
       "Nuestra empresa es un equipo de profesionales que trabaja para usted. Conocemos todos los matices de los procesos de visado, por lo que asumimos toda la parte burocrática del trabajo."
@@ -66,7 +66,7 @@
     "title": "Nuestras ventajas",
     "list": [
       "Ya no necesitas actualizar constantemente el portal de inmigración ni dedicar tiempo a buscar citas disponibles. ¡Nosotros lo hacemos por ti!",
-      "Nuestro objetivo es conseguir tu cita lo más rápido posible. En la mayoría de los casos, solo toma de 2 a 5 días hábiles, dependiendo del tipo de servicio.",
+      "Trabajamos para que recibas el servicio que necesitas lo más rápido posible. En la mayoría de los casos, tarda solo de 2 a 5 días hábiles, según el tipo de trámite.",
       "Sin tarifas ocultas ni pagos por adelantado. El pago se realiza únicamente después de completar el servicio con éxito.",
       "Operamos de manera oficial, con términos contractuales claros, y garantizamos la confidencialidad de tus datos.",
       "Nuestros especialistas están siempre disponibles para responder tus preguntas y brindarte asesoramiento."
@@ -100,8 +100,8 @@
       {
         "title": "Reserva",
         "descr": [
-          "Servicio Exprés: Su cita se organiza en un plazo de 5 días hábiles.",
-          "Servicio Estándar: Su cita se organiza en un plazo de 14 días hábiles."
+          "Servicio exprés: recibes el servicio necesario en un plazo de 5 días hábiles.",
+          "Servicio estándar: recibes el servicio necesario en un plazo de 14 días hábiles."
         ]
       },
       {
@@ -120,15 +120,15 @@
     "list": [
       {
         "q": "¿Qué servicios proporcionan?",
-        "a": "Ayudamos a personas y familias que residen en España a conseguir citas para servicios de extranjería."
+        "a": "Ofrecemos servicios de visado a nuestros clientes, que incluyen: asesoramiento, ayuda en la preparación de documentos y asistencia en la gestión de citas en línea para los servicios de extranjería, con acompañamiento posterior durante la presentación de los documentos."
       },
       {
         "q": "¿Qué es una \"cita\"?",
         "a": "Se puede decir que una \"cita\" es análoga a un ticket en un centro de servicios administrativos (CSA). Una \"cita\" es la confirmación de una reserva con el servicio de migración para una fecha y hora específicas. Cada \"cita\" es personal. No se puede transferir a otra persona ni cambiar la fecha o la hora de la reunión."
       },
       {
-        "q": "¿Por qué debería reservar a través de ustedes?",
-        "a": "Tenemos un conocimiento integral del proceso de programación de citas en las extranjería. Al manejar todas las tareas burocráticas, nos aseguramos de que recibas la fecha de cita que deseas y puedas enfocarte en prepararte para tu cita."
+        "q": "¿Por qué debería elegirlos a ustedes?",
+        "a": "Somos un equipo que ofrece servicios de visa profesionales a nuestros clientes. Entendemos lo complicado que puede ser hacerlo todo por tu cuenta, por eso hemos creado un servicio que te libera de esta carga y garantiza resultados."
       },
       {
         "q": "¿Cuánto cuesta su servicio?",
@@ -145,7 +145,7 @@
     "descr": "¡Contáctanos ahora!<br></br>Nuestros expertos responderán en 15 minutos"
   },
   "Footer": {
-    "slogan": "Tu cita <accent>garantizada</accent> con los servicios de inmigración en España",
+    "slogan": "Asistencia Profesional en Trámites de Visa",
     "copy": "Todos los derechos reservados",
     "policy": "Política de privacidad",
     "offer": "Contrato de oferta pública",

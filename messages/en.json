@@ -21,7 +21,7 @@
   },
   "Metadata": {
     "title": "Cita Master",
-    "descr": "Your Guaranteed Appointment with Spain’s Migration Services"
+    "descr": "Professional Support in Visa Matters"
   },
   "Menu": {
     "about": "About us",
@@ -31,7 +31,7 @@
     "reviews": "Testimonials"
   },
   "Hero": {
-    "title": "Your Guaranteed Appointment with Spain’s Migration Services",
+    "title": "Professional Support in Visa Matters",
     "descr": [
       "We provide visa services to our clients, which include: consulting, assistance in preparing documents, and help with scheduling online appointments at immigration offices, with follow-up support during document submission. At a time when every minute can be important, our service frees you from days of waiting, stress, and uncertainty.",
       "Our company is a team of professionals who work for you. We know all the intricacies of visa processes, so we take care of all the bureaucratic work."
@@ -53,7 +53,6 @@
         "We operate legally, in full compliance with all regulations, with clear and transparent terms.",
         "Every client matters to us, and we go above and beyond to exceed your expectations.",
         "Our team has extensive experience with Migration matters and knows how to make the booking process fast and efficient.",
-
         "Officially registered company adhering to all legal standards.",
         "A clear service agreement prepared by top legal experts.",
         "Secure payment methods through trusted banking systems.",
@@ -67,7 +66,7 @@
     "title": "Our Advantages",
     "list": [
       "You no longer need to constantly refresh the Migration portal or spend time searching for available slots. We’ll handle it for you!",
-      "We aim to secure your appointment as quickly as possible. In most cases, it takes only 2–5 business days, depending on the service type.",
+      "We work to ensure that you receive the service you need as quickly as possible. In most cases, it takes only 2–5 business days, depending on the type of request.",
       "No hidden fees or prepayments. Payment is made only after the service is successfully completed.",
       "We operate officially, with clear contractual terms, ensuring the confidentiality of your data.",
       "Our specialists are always available to answer your questions and provide consultation."
@@ -101,8 +100,8 @@
       {
         "title": "Booking",
         "descr": [
-          "Express Service: Your appointment is arranged within 5 business days.",
-          "Standard Service: Your appointment is arranged within 14 business days."
+          "Express service type: you receive the required service within 5 business days.",
+          "Standard service type: you receive the required service within 14 business days."
         ]
       },
       {
@@ -121,15 +120,15 @@
     "list": [
       {
         "q": "What services do you provide?",
-        "a": "We help individuals and families residing in Spain secure appointments for migration services."
+        "a": "We provide visa services to our clients, which include: consulting, assistance in preparing documents, and help with scheduling online appointments at immigration offices, with follow-up support during document submission."
       },
       {
         "q": "What is a \"sita\"?",
         "a": "It can be said that a \"sita\" is analogous to a ticket in a ASC (Administrative Services Center). A \"sita\" serves as confirmation of a scheduled appointment with the migration service for a specific date and time. Each \"sita\" is personalized. It cannot be transferred to another person, nor can the date or time of the appointment be changed."
       },
       {
-        "q": "Why should I book through you?",
-        "a": "We have a comprehensive understanding of the appointment scheduling process in Spanish migration services. By handling all the bureaucratic tasks, we ensure you receive the appointment date you desire and can focus on preparing for your appointment."
+        "q": "Why should I choose you?",
+        "a": "We are a team that provides professional visa services to our clients. We understand how difficult it can be to handle everything on your own, which is why we created a service that takes this burden off your shoulders and guarantees results."
       },
       {
         "q": "How much does your service cost?",
@@ -146,7 +145,7 @@
     "descr": "Contact us now!<br></br>Our experts will respond within 15 minutes"
   },
   "Footer": {
-    "slogan": "Your <accent>guaranteed</accent> entry <br></br>into the Spanish Migration service",
+    "slogan": "Professional Support in Visa Matters",
     "copy": "All rights reserved",
     "policy": "Privacy Policy",
     "offer": "Public Offer Agreement",
