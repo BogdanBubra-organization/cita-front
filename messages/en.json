@@ -9,7 +9,7 @@
     "year": "Year of birth",
     "passport": "Passport number",
     "phone": "Phone number",
-    "telegram": "Telegram username",
+    "telegram": "Telegram username, ex. @nickname1",
     "region": "Region",
     "office": "Office",
     "service": "Service type",
@@ -85,7 +85,7 @@
           "Desired office location",
           "Type of service",
           "Mobile phone number (Ukrainian or Spanish)",
-          "Telegram username"
+          "Telegram username, ex. @nickname1"
         ]
       },
       {

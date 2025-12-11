@@ -9,7 +9,7 @@
     "year": "Año de nacimiento",
     "passport": "Número de pasaporte",
     "phone": "Número de teléfono",
-    "telegram": "Nombre de usuario de Telegram",
+    "telegram": "Nombre de usuario de Telegram, p. ej. @nickname1",
     "region": "Región",
     "office": "Oficina",
     "service": "Tipo de servicio",
@@ -85,7 +85,7 @@
           "Oficina deseada",
           "Tipo de servicio",
           "Número de teléfono móvil (ucraniano o español)",
-          "Nombre de usuario de Telegram"
+          "Nombre de usuario de Telegram, p. ej. @nickname1"
         ]
       },
       {
