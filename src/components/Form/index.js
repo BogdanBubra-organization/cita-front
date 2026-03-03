@@ -8,8 +8,6 @@ import { useForm } from 'react-hook-form'
 import Button from '../Button'
 import Field from './components/Field'
 import LINKS from '@/constants/links'
-import cities from '@/data/cities.json'
-import officeServices from '@/data/officeServices.json'
 import s from './Form.module.scss'
 import { BACKEND_API_URL } from '@/constants/constants'
 
@@ -41,20 +39,6 @@ const sendTelegramMessage = async (data) => {
   }
 }
 
-const getDependentOptions = (type, id) => {
-  switch (type) {
-    case 'services':
-      return officeServices
-        .filter((service) => service.cityId === id)
-        .filter(
-          (value, index, self) =>
-            index === self.findIndex((t) => t.serviceId === value.serviceId)
-        )
-    default:
-      return []
-  }
-}
-
 const Form = ({ variant, handleClose }) => {
   const [submitting, setSubmitting] = useState(false)
   const [succeeded, setSucceeded] = useState(false)
@@ -83,14 +67,6 @@ const Form = ({ variant, handleClose }) => {
     setSubmitting(true)
 
     const updatedData = { ...submissionData }
-
-    const city = cities.find((city) => city.id === updatedData.city)
-    if (city) updatedData.city = city.name
-
-    const service = officeServices.find(
-      (service) => service.serviceId === updatedData.service
-    )
-    if (service) updatedData.service = service.serviceName
 
     const filteredData = Object.fromEntries(
       Object.entries(updatedData).filter(([key, value]) => {
@@ -124,55 +100,17 @@ const Form = ({ variant, handleClose }) => {
 
   const isPopup = variant === 'popup'
 
-  const selectedCity = watch('city')
-
-  const serviceOptions = selectedCity
-    ? getDependentOptions('services', selectedCity).map((service) => ({
-        value: service.serviceId,
-        label: service.serviceName,
-      }))
-    : []
-
-  const handleResetField = (field) => {
-    setValue(field, '')
-  }
-
   const FIELDS = [
     {
       name: 'name',
-      placeholder: isPopup ? t('nameShort') : t('name'),
+      placeholder: t('nameShort'),
       isMain: true,
-    },
-    {
-      name: 'year',
-      placeholder: t('year'),
-    },
-    {
-      name: 'passport',
-      placeholder: t('passport'),
-    },
-    {
-      name: 'phone',
-      type: 'tel',
-      placeholder: t('phone'),
-      pattern: /^[+]?[\d() -]*\d[\d() -]{7,}$/,
     },
     {
       name: 'telegram',
       placeholder: t('telegram'),
       isMain: true,
-    },
-    {
-      name: 'city',
-      placeholder: t('region'),
-      list: cities.map((city) => ({ value: city.id, label: city.name })),
-      onChange: () => handleResetField('service'),
-    },
-    {
-      name: 'service',
-      placeholder: t('service'),
-      list: serviceOptions,
-    },
+    }
   ]
 
   const data = isPopup ? FIELDS.filter((item) => item.isMain) : FIELDS

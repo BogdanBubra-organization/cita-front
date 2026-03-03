@@ -4,15 +4,8 @@
     "locale": "{locale, select, uk {UA} en {EN} es {ES} other {Unknown}}"
   },
   "Form": {
-    "name": "Full Name (as in the passport)",
     "nameShort": "Name",
-    "year": "Year of birth",
-    "passport": "Passport number",
-    "phone": "Phone number",
-    "telegram": "Telegram username, ex. @nickname1",
-    "region": "Region",
-    "office": "Office",
-    "service": "Service type",
+    "telegram": "Telegram username, ex. @your_nickname",
     "submit": "Send request",
     "submitShort": "Send",
     "success": "Request sent!",
@@ -141,7 +134,7 @@
     ]
   },
   "Order": {
-    "title": "Fill out the form",
+    "title": "Obtener una consulta",
     "descr": "Contact us now!<br></br>Our experts will respond within 15 minutes"
   },
   "Footer": {

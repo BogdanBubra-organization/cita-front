@@ -4,15 +4,8 @@
     "locale": "{locale, select, uk {UA} en {EN} es {ES} other {Unknown}}"
   },
   "Form": {
-    "name": "Nombre y Apellido (como en el pasaporte)",
     "nameShort": "Nombre",
-    "year": "Año de nacimiento",
-    "passport": "Número de pasaporte",
-    "phone": "Número de teléfono",
-    "telegram": "Nombre de usuario de Telegram, p. ej. @nickname1",
-    "region": "Región",
-    "office": "Oficina",
-    "service": "Tipo de servicio",
+    "telegram": "Nombre de usuario de Telegram, p. ej. @your_nickname",
     "submit": "Enviar solicitud",
     "submitShort": "Enviar",
     "success": "¡Solicitud enviada!",
@@ -141,7 +134,7 @@
     ]
   },
   "Order": {
-    "title": "Rellene el formulario",
+    "title": "Consulta",
     "descr": "¡Contáctanos ahora!<br></br>Nuestros expertos responderán en 15 minutos"
   },
   "Footer": {
