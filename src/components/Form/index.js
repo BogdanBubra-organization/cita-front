@@ -11,16 +11,6 @@ import LINKS from '@/constants/links'
 import s from './Form.module.scss'
 import { BACKEND_API_URL } from '@/constants/constants'
 
-const formatTelegramMessage = (data) => {
-  let message = 'Нова заявка:\n'
-
-  for (const [key, value] of Object.entries(data)) {
-    message += `${key}: ${value}\n`
-  }
-
-  return message.trim()
-}
-
 const sendTelegramMessage = async ({name, contact}) => {
   try {
     const response = await fetch(`${BACKEND_API_URL}/web/lead-form`, {
