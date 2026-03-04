@@ -21,14 +21,16 @@ const formatTelegramMessage = (data) => {
   return message.trim()
 }
 
-const sendTelegramMessage = async (data) => {
-  const message = formatTelegramMessage(data)
-
+const sendTelegramMessage = async ({name, contact}) => {
   try {
     const response = await fetch(`${BACKEND_API_URL}/web/lead-form`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text: message }),
+      body: JSON.stringify({
+        source: "CITAMASTER.COM",
+        name,
+        contact
+      }),
     })
 
     if (response.error) {
@@ -107,7 +109,7 @@ const Form = ({ variant, handleClose }) => {
       isMain: true,
     },
     {
-      name: 'telegram',
+      name: 'contact',
       placeholder: t('telegram'),
       isMain: true,
     }
