@@ -3,12 +3,14 @@
 import React from 'react'
 import { handleScroll } from '@/utils/handleScroll'
 import { routing, usePathname } from '@/i18n/routing'
+import { Link } from '@/i18n/routing'
 
-const AnchorLink = ({
+const CustomLink = ({
     label,
     link,
     handleClose,
     className,
+    isAnchor = true,
 }) => {
 	const {locales, defaultLocale} = routing
 	const pathname = usePathname()
@@ -18,19 +20,17 @@ const AnchorLink = ({
 	const isHomepage = new RegExp(`^/(${nonDefaultLocales.join('|')})?$`).test(pathname)
 
 	const handleClick = ( e ) => {
-		isHomepage && handleScroll(e, link)
+		if (isAnchor) isHomepage && handleScroll(e, link)
 		handleClose && handleClose()
 	}
 
-	return (
-		<a
+	return (<Link
 			href={isHomepage ? link : `/${link}`}
 			onClick={handleClick}
 			className={className}
 		>
 			{label}
-		</a>
-	)
+		</Link>)
 }
 
-export default AnchorLink
+export default CustomLink
