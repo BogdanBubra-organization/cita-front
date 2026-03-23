@@ -3,7 +3,6 @@
 import React from 'react'
 import { handleScroll } from '@/utils/handleScroll'
 import { routing, usePathname } from '@/i18n/routing'
-import Link from "next/link";
 
 const AnchorLink = ({
     label,
@@ -23,13 +22,15 @@ const AnchorLink = ({
 		handleClose && handleClose()
 	}
 
-	return (<Link
+	return (
+		<a
 			href={isHomepage ? link : `/${link}`}
 			onClick={handleClick}
 			className={className}
 		>
 			{label}
-		</Link>)
+		</a>
+	)
 }
 
 export default AnchorLink
