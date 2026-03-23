@@ -3,7 +3,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
-import AnchorLink from '../AnchorLink'
+import CustomLink from '../CustomLink'
 import s from './Menu.module.scss'
 
 const Menu = ({ handleClose, variant }) => {
@@ -28,8 +28,8 @@ const Menu = ({ handleClose, variant }) => {
     },
     {
       label: t('reviews'),
-      link: 'https://maps.app.goo.gl/EVs9ikdPnU2ZyQFT8',
-      isExternal: true
+      link: 'testimonials',
+      isAnchor: false
     }
   ]
 
@@ -37,7 +37,7 @@ const Menu = ({ handleClose, variant }) => {
     <ul className={clsx(s.menu, { [s[variant]]: variant })}>
       {DATA.map((item) => (
         <li key={item.label} className={s.menu_item}>
-          <AnchorLink
+          <CustomLink
             {...item}
             handleClose={handleClose}
             className={s.menu_link}
