@@ -66,7 +66,8 @@
     ]
   },
   "Testimonials": {
-    "title": "Testimonials"
+    "title": "Testimonials",
+    "widgetId": "9dfd0294-2c34-4a17-82ed-2b67174e0455"
   },
   "Services": {
     "title": "Service provision process",

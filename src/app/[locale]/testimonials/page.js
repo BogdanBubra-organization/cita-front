@@ -8,5 +8,5 @@ export default async function Home({ params }) {
   // Enable static rendering
   setRequestLocale(locale)
 
-  return <Testimonials locale={locale} />
+  return <Testimonials />
 }

@@ -66,7 +66,8 @@
     ]
   },
   "Testimonials": {
-    "title": "Reseñas de clientes"
+    "title": "Reseñas de clientes",
+    "widgetId": "d92fccc3-b9ed-4076-bc46-539a5fa2ae7c"
   },
   "Services": {
     "title": "Proceso de Servicio",
