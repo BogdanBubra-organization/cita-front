@@ -5,12 +5,11 @@ import { handleScroll } from '@/utils/handleScroll'
 import { routing, usePathname } from '@/i18n/routing'
 import Link from "next/link";
 
-const CustomLink = ({
+const AnchorLink = ({
     label,
     link,
     handleClose,
     className,
-    isAnchor = true,
 }) => {
 	const {locales, defaultLocale} = routing
 	const pathname = usePathname()
@@ -20,7 +19,7 @@ const CustomLink = ({
 	const isHomepage = new RegExp(`^/(${nonDefaultLocales.join('|')})?$`).test(pathname)
 
 	const handleClick = ( e ) => {
-		if (isAnchor) isHomepage && handleScroll(e, link)
+		isHomepage && handleScroll(e, link)
 		handleClose && handleClose()
 	}
 
@@ -33,4 +32,4 @@ const CustomLink = ({
 		</Link>)
 }
 
-export default CustomLink
+export default AnchorLink

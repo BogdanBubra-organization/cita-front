@@ -1,6 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
-import CustomLink from '../CustomLink'
+import AnchorLink from '../AnchorLink'
 import s from './Button.module.scss'
 
 const Button = ({
@@ -16,7 +16,7 @@ const Button = ({
 }) => {
   if (href) {
     return (
-      <CustomLink
+      <AnchorLink
         label={children}
         link={href}
         handleClose={handleClose}
