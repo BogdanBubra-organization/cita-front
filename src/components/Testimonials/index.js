@@ -4,8 +4,7 @@ import React from 'react'
 import { ElfsightWidget } from 'next-elfsight-widget'
 import { useTranslations, useLocale } from 'next-intl'
 
-const Testimonials = () => {
-	const locale = useLocale()
+const Testimonials = ({locale}) => {
 	const t = useTranslations('Testimonials')
 
 	const getLocalizedWidgetID = () => {
