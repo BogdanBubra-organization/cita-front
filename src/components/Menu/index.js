@@ -5,8 +5,8 @@ import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 import AnchorLink from '../AnchorLink'
 import s from './Menu.module.scss'
-import Link from "next/link";
-import LINKS from "@/constants/links";
+import { Link } from '@/i18n/routing'
+import LINKS from "@/constants/links"
 
 const Menu = ({ handleClose, variant }) => {
   const t = useTranslations('Menu')
