@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 import CustomLink from '../CustomLink'
 import s from './Menu.module.scss'
+import LINKS from "@/constants/links";
 
 const Menu = ({ handleClose, variant }) => {
   const t = useTranslations('Menu')
@@ -28,7 +29,7 @@ const Menu = ({ handleClose, variant }) => {
     },
     {
       label: t('reviews'),
-      link: 'testimonials',
+      link: LINKS.testimonials,
       isAnchor: false
     }
   ]
