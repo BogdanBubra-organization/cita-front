@@ -25,7 +25,7 @@ const CustomLink = ({
 	}
 
 	return (<Link
-			href={isHomepage ? link : `/${link}`}
+			href={isAnchor ? (isHomepage ? link : `/${link}`) : link}
 			onClick={handleClick}
 			className={className}
 		>
