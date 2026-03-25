@@ -2,16 +2,19 @@
 
 import React from 'react'
 import { ElfsightWidget } from 'next-elfsight-widget'
-import { useTranslations, useLocale } from 'next-intl'
+import { useTranslations } from 'next-intl'
 
-const Testimonials = () => {
+const Testimonials = ({
+	variant = 'main'
+}) => {
 	const t = useTranslations('Testimonials')
 
 	return (
-		<section className="container simple-page">
-			<h1 className="h2">{t('title')}</h1>
-
-			<ElfsightWidget widgetId={t('widgetId')}/>
+		<section className="simple-page">
+			<div className="container">
+				<h1 className="h2">{t('title')}</h1>
+				<ElfsightWidget widgetId={t(`widgetId_${variant}`)} />
+			</div>
 		</section>
 	)
 }
