@@ -9,26 +9,51 @@ import Button from '../Button'
 import Field from './components/Field'
 import LINKS from '@/constants/links'
 import s from './Form.module.scss'
-import { BACKEND_API_URL } from '@/constants/constants'
+import {
+  BACKEND_API_URL,
+  KOMMO_FORM_ID,
+  KOMMO_FORM_HASH,
+} from '@/constants/constants'
 
-const sendTelegramMessage = async ({name, contact}) => {
-  try {
-    const response = await fetch(`${BACKEND_API_URL}/web/lead-form`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        source: "CITAMASTER.COM",
-        name,
-        contact
-      }),
-    })
+const sendTelegramMessage = async ({ name, contact }) => {
+  const response = await fetch(`${BACKEND_API_URL}/web/lead-form`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      source: 'CITAMASTER.COM',
+      name,
+      contact,
+    }),
+  })
 
-    if (response.error) {
-      console.error('Failed to send Telegram message:', response.error)
-    }
-  } catch (error) {
-    console.error('Could not send a message to Telegram:', error)
+  if (!response.ok) {
+    throw new Error('Failed to send Telegram message')
   }
+
+  return response
+}
+
+const sendKommoLead = async ({ name, contact }) => {
+  if (!KOMMO_FORM_ID || !KOMMO_FORM_HASH) {
+    console.warn('Kommo env vars are missing')
+    return
+  }
+
+  const formData = new FormData()
+
+  formData.append('form_id', KOMMO_FORM_ID)
+  formData.append('hash', KOMMO_FORM_HASH)
+
+  formData.append('fields[name_2]', name || '')
+  formData.append('fields[490300_1]', contact || '')
+
+  const response = await fetch('https://forms.kommo.com/queue/add/', {
+    method: 'POST',
+    body: formData,
+    mode: 'no-cors',
+  })
+
+  return response
 }
 
 const Form = ({ variant, handleClose }) => {
@@ -36,6 +61,7 @@ const Form = ({ variant, handleClose }) => {
   const [succeeded, setSucceeded] = useState(false)
 
   const router = useRouter()
+  const t = useTranslations('Form')
 
   const {
     register,
@@ -58,10 +84,8 @@ const Form = ({ variant, handleClose }) => {
   const onSubmit = async (submissionData) => {
     setSubmitting(true)
 
-    const updatedData = { ...submissionData }
-
     const filteredData = Object.fromEntries(
-      Object.entries(updatedData).filter(([key, value]) => {
+      Object.entries(submissionData).filter(([_, value]) => {
         if (typeof value === 'string') {
           return value.trim() !== ''
         }
@@ -76,9 +100,11 @@ const Form = ({ variant, handleClose }) => {
     }
 
     try {
-      await sendTelegramMessage(filteredData)
-      // setSucceeded(true)
-      // setTimeout(handleReset, 5000)
+      await Promise.allSettled([
+        sendTelegramMessage(filteredData),
+        sendKommoLead(filteredData),
+      ])
+
       handleReset()
       router.push('/thankyou')
     } catch (error) {
@@ -87,8 +113,6 @@ const Form = ({ variant, handleClose }) => {
       setSubmitting(false)
     }
   }
-
-  const t = useTranslations('Form')
 
   const isPopup = variant === 'popup'
 
@@ -102,7 +126,7 @@ const Form = ({ variant, handleClose }) => {
       name: 'contact',
       placeholder: t('telegram'),
       isMain: true,
-    }
+    },
   ]
 
   const data = isPopup ? FIELDS.filter((item) => item.isMain) : FIELDS
