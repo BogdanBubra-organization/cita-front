@@ -9,29 +9,7 @@ import Button from '../Button'
 import Field from './components/Field'
 import LINKS from '@/constants/links'
 import s from './Form.module.scss'
-import {
-  BACKEND_API_URL,
-  KOMMO_FORM_ID,
-  KOMMO_FORM_HASH,
-} from '@/constants/constants'
-
-const sendTelegramMessage = async ({ name, contact }) => {
-  const response = await fetch(`${BACKEND_API_URL}/web/lead-form`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      source: 'CITAMASTER.COM',
-      name,
-      contact,
-    }),
-  })
-
-  if (!response.ok) {
-    throw new Error('Failed to send Telegram message')
-  }
-
-  return response
-}
+import { KOMMO_FORM_ID, KOMMO_FORM_HASH } from '@/constants/constants'
 
 const sendKommoLead = async ({ name, contact }) => {
   if (!KOMMO_FORM_ID || !KOMMO_FORM_HASH) {
@@ -100,10 +78,7 @@ const Form = ({ variant, handleClose }) => {
     }
 
     try {
-      await Promise.allSettled([
-        sendTelegramMessage(filteredData),
-        sendKommoLead(filteredData),
-      ])
+      await Promise.allSettled([sendKommoLead(filteredData)])
 
       handleReset()
       router.push('/thankyou')
