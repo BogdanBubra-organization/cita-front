@@ -3,7 +3,7 @@ const withNextIntl = createNextIntlPlugin()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // output: 'export',
-  distDir: 'build',
+  // distDir: 'build',
   sassOptions: {
     quietDeps: true,
     silenceDeprecations: [
@@ -50,7 +50,7 @@ const nextConfig = {
       },
       {
         test: /\.node/,
-        use: "raw-loader",
+        use: 'raw-loader',
       }
     )
 
