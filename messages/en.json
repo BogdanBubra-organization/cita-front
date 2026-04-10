@@ -5,12 +5,20 @@
   },
   "Form": {
     "nameShort": "Name",
-    "telegram": "Telegram username, ex. @your_nickname",
+    "contact": "Phone",
     "submit": "Send request",
     "submitShort": "Send",
     "success": "Request sent!",
     "successShort": "Sent!",
-    "agree": "I accept the <policy>Privacy Policy</policy><extra> and </extra><offer>Public Offer Agreement</offer>"
+    "agree": "I accept the <policy>Privacy Policy</policy><extra> and </extra><offer>Public Offer Agreement</offer>",
+    "errors": {
+      "empty": "The form is empty",
+      "config": "Form configuration error. Please try again later.",
+      "timeout": "The server is temporarily unavailable. Please try again.",
+      "server": "Server error. Please try again later.",
+      "request": "Failed to submit the form. Please check the data and try again.",
+      "unknown_error": "Something went wrong. Please try again later."
+    }
   },
   "Metadata": {
     "title": "Cita Master",
@@ -77,13 +85,7 @@
         "title": "You fill out the form on our website with the following details",
         "descr": [
           "Full name (as in your passport)",
-          "Year of birth",
-          "Passport number and series",
-          "Region of residence",
-          "Desired office location",
-          "Type of service",
-          "Mobile phone number (Ukrainian or Spanish)",
-          "Telegram username, ex. @nickname1"
+          "Mobile phone number (Ukrainian or Spanish)"
         ]
       },
       {

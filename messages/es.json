@@ -5,12 +5,20 @@
   },
   "Form": {
     "nameShort": "Nombre",
-    "telegram": "Nombre de usuario de Telegram, p. ej. @your_nickname",
+    "contact": "Número de teléfono",
     "submit": "Enviar solicitud",
     "submitShort": "Enviar",
     "success": "¡Solicitud enviada!",
     "successShort": "Enviado!",
-    "agree": "Acepto la <policy>Política de privacidad</policy><extra> y el </extra><offer>Contrato de oferta pública</offer>"
+    "agree": "Acepto la <policy>Política de privacidad</policy><extra> y el </extra><offer>Contrato de oferta pública</offer>",
+    "errors": {
+      "empty": "El formulario está vacío",
+      "config": "Error de configuración del formulario. Por favor, inténtelo de nuevo más tarde.",
+      "timeout": "El servidor no responde temporalmente. Por favor, inténtelo de nuevo.",
+      "server": "Error del servidor. Por favor, inténtelo de nuevo más tarde.",
+      "request": "No se pudo enviar el formulario. Verifique los datos e inténtelo de nuevo.",
+      "unknown_error": "Algo salió mal. Por favor, inténtelo de nuevo más tarde."
+    }
   },
   "Metadata": {
     "title": "Cita Master",
@@ -77,13 +85,7 @@
         "title": "Complete el formulario en nuestro sitio web con la siguiente información",
         "descr": [
           "Nombre completo (como aparece en su pasaporte)",
-          "Año de nacimiento",
-          "Número y serie del pasaporte",
-          "Región de residencia",
-          "Oficina deseada",
-          "Tipo de servicio",
-          "Número de teléfono móvil (ucraniano o español)",
-          "Nombre de usuario de Telegram, p. ej. @nickname1"
+          "Número de teléfono móvil (ucraniano o español)"
         ]
       },
       {

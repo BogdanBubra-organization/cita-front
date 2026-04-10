@@ -18,6 +18,8 @@ const Field = ({
   errors,
   disabled,
   className,
+  inputMode,
+  sanitize,
 }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const dropdownRef = useRef(null)
@@ -73,11 +75,28 @@ const Field = ({
     <input
       type={type}
       name={name}
+      inputMode={inputMode}
       placeholder={placeholder}
       disabled={disabled}
       {...register(name, {
         required: !!required,
-        pattern: pattern && { value: pattern },
+        pattern: pattern ? { value: pattern } : undefined,
+        onChange: (event) => {
+          const nextValue = sanitize
+            ? sanitize(event.target.value)
+            : event.target.value
+
+          if (nextValue !== event.target.value) {
+            event.target.value = nextValue
+          }
+
+          setValue(name, nextValue, {
+            shouldDirty: true,
+            shouldValidate: true,
+          })
+
+          onChange && onChange(nextValue)
+        },
       })}
       data-state={errors[name] ? 'error' : undefined}
       className={className}

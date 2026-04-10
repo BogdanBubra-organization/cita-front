@@ -9,34 +9,32 @@ import Button from '../Button'
 import Field from './components/Field'
 import LINKS from '@/constants/links'
 import s from './Form.module.scss'
-import { KOMMO_FORM_ID, KOMMO_FORM_HASH } from '@/constants/constants'
 
 const sendKommoLead = async ({ name, contact }) => {
-  if (!KOMMO_FORM_ID || !KOMMO_FORM_HASH) {
-    console.warn('Kommo env vars are missing')
-    return
-  }
-
-  const formData = new FormData()
-
-  formData.append('form_id', KOMMO_FORM_ID)
-  formData.append('hash', KOMMO_FORM_HASH)
-
-  formData.append('fields[name_2]', name || '')
-  formData.append('fields[490300_1]', contact || '')
-
-  const response = await fetch('https://forms.kommo.com/queue/add/', {
+  const response = await fetch('/api/kommo', {
     method: 'POST',
-    body: formData,
-    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      contact,
+    }),
   })
 
-  return response
+  const data = await response.json().catch(() => null)
+
+  if (!response.ok || !data?.success) {
+    throw new Error(data?.code || 'unknown_error')
+  }
+
+  return data
 }
 
 const Form = ({ variant, handleClose }) => {
   const [submitting, setSubmitting] = useState(false)
   const [succeeded, setSucceeded] = useState(false)
+  const [submitError, setSubmitError] = useState('')
 
   const router = useRouter()
   const t = useTranslations('Form')
@@ -55,35 +53,49 @@ const Form = ({ variant, handleClose }) => {
 
   const handleReset = () => {
     handleClose && handleClose()
-    setSucceeded(false)
     reset()
   }
 
   const onSubmit = async (submissionData) => {
     setSubmitting(true)
+    setSubmitError('')
+    setSucceeded(false)
 
     const filteredData = Object.fromEntries(
       Object.entries(submissionData).filter(([_, value]) => {
         if (typeof value === 'string') {
           return value.trim() !== ''
         }
+
         return value !== undefined && value !== null
       })
     )
 
     if (Object.keys(filteredData).length === 0) {
-      console.error('No valid fields to submit.')
+      setSubmitError(t('errors.empty'))
       setSubmitting(false)
       return
     }
 
     try {
-      await Promise.allSettled([sendKommoLead(filteredData)])
+      await sendKommoLead(filteredData)
 
+      setSucceeded(true)
       handleReset()
       router.push('/thankyou')
     } catch (error) {
-      console.error('An error occurred while submitting the form:', error)
+      const errorCode = error instanceof Error ? error.message : 'unknown_error'
+
+      let errorMessage = t('errors.unknown_error')
+
+      try {
+        errorMessage = t(`errors.${errorCode}`)
+      } catch {
+        errorMessage = t('errors.unknown_error')
+      }
+
+      setSubmitError(errorMessage)
+      setSucceeded(false)
     } finally {
       setSubmitting(false)
     }
@@ -95,16 +107,15 @@ const Form = ({ variant, handleClose }) => {
     {
       name: 'name',
       placeholder: t('nameShort'),
-      isMain: true,
     },
     {
       name: 'contact',
-      placeholder: t('telegram'),
-      isMain: true,
+      placeholder: t('contact'),
+      inputMode: 'tel',
+      pattern: /^[0-9+\-() ]+$/,
+      sanitize: (value) => value.replace(/[^0-9+\-() ]/g, ''),
     },
   ]
-
-  const data = isPopup ? FIELDS.filter((item) => item.isMain) : FIELDS
 
   return (
     <form
@@ -114,7 +125,7 @@ const Form = ({ variant, handleClose }) => {
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(s.form, { [s[variant]]: variant })}
     >
-      {data.map((item, i) => (
+      {FIELDS.map((item, i) => (
         <Field
           key={'f' + i}
           {...item}
@@ -135,7 +146,7 @@ const Form = ({ variant, handleClose }) => {
             type="checkbox"
             name="agree"
             disabled={submitting || succeeded}
-            data-state={errors['agree'] ? 'error' : undefined}
+            data-state={errors.agree ? 'error' : undefined}
             {...register('agree', {
               required: true,
             })}
@@ -168,6 +179,12 @@ const Form = ({ variant, handleClose }) => {
             ),
           })}
         </label>
+      )}
+
+      {submitError && (
+        <div className={s.form_error} role="alert">
+          {submitError}
+        </div>
       )}
 
       <Button
