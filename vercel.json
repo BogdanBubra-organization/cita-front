@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/review",
+      "destination": "https://g.page/r/CYwPzuTGBaneEBI/review",
+      "permanent": true
+    },
+    {
+      "source": "/(uk|en|es)/review",
+      "destination": "https://g.page/r/CYwPzuTGBaneEBI/review",
+      "permanent": true
+    }
+  ]
+}
