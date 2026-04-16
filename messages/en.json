@@ -166,6 +166,11 @@
     "content": "",
     "url": "Follow this link to view the agreement"
   },
+  "Messengers": {
+    "metaTitle": "Message us | Cita Master",
+    "title": "Message us",
+    "description": "Message us in any messenger — we'll respond quickly!"
+  },
   "Thankyou": {
     "title": "Thank you for your application!",
     "content": "Our manager will contact you shortly."

@@ -1,0 +1,75 @@
+.messengers {
+  &_descr {
+    max-width: 720px;
+    margin-inline: auto;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0;
+    margin-inline: auto;
+    margin-top: 24px;
+    list-style: none;
+
+    @media (width >= 740px) {
+      gap: 16px;
+      margin-top: 32px;
+    }
+  }
+
+  &_btn {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    height: 100%;
+    color: #fff;
+    border: solid 1px;
+    box-shadow: 0 4px 11px rgb(0 0 0 / 12%);
+    transition: all 250ms ease-in-out;
+
+    &:hover,
+    &:focus-visible {
+      color: #fff;
+    }
+  }
+
+  &_btnIcon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+  }
+
+  &_btnTelegram {
+    background-color: #229ed9;
+    border-color: #229ed9;
+    box-shadow: 0 4px 11px rgb(34 158 217 / 35%);
+
+    &:hover,
+    &:focus-visible {
+      background-color: #1b8bc7;
+      border-color: #1b8bc7;
+      box-shadow: 0 4px 19px rgb(34 158 217 / 45%);
+    }
+  }
+
+  &_btnWhatsApp {
+    background-color: #25d366;
+    border-color: #25d366;
+    box-shadow: 0 4px 11px rgb(37 211 102 / 35%);
+
+    &:hover,
+    &:focus-visible {
+      background-color: #20bd5a;
+      border-color: #20bd5a;
+      box-shadow: 0 4px 19px rgb(37 211 102 / 45%);
+    }
+  }
+}

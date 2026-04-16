@@ -309,7 +309,7 @@ section {
     }
   }
 
-  ul {
+  ul:not([class]) {
     padding-left: 32px;
   }
 }
