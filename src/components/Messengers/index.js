@@ -4,7 +4,7 @@ import React from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 import btn from '@/components/Button/Button.module.scss'
-import { TELEGRAM_BOT_HREF } from '@/components/Socials/constants'
+import { TELEGRAM_LINK } from '@/components/Socials/constants'
 import TelegramIcon from '@/assets/icons/telegram.svg'
 import WhatsAppIcon from '@/assets/icons/whatsapp.svg'
 import s from './Messengers.module.scss'
@@ -12,7 +12,7 @@ import s from './Messengers.module.scss'
 const CHANNELS = [
   {
     name: 'Telegram',
-    href: TELEGRAM_BOT_HREF,
+    href: TELEGRAM_LINK,
     variant: 'telegram',
     Icon: TelegramIcon,
   },
