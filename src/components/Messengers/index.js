@@ -4,6 +4,7 @@ import React from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 import btn from '@/components/Button/Button.module.scss'
+import { TELEGRAM_BOT_HREF } from '@/components/Socials/constants'
 import TelegramIcon from '@/assets/icons/telegram.svg'
 import WhatsAppIcon from '@/assets/icons/whatsapp.svg'
 import s from './Messengers.module.scss'
@@ -11,7 +12,7 @@ import s from './Messengers.module.scss'
 const CHANNELS = [
   {
     name: 'Telegram',
-    href: 'https://t.me/cita_master',
+    href: TELEGRAM_BOT_HREF,
     variant: 'telegram',
     Icon: TelegramIcon,
   },
@@ -51,7 +52,7 @@ const Messengers = () => {
                 btn.btn,
                 s.messengers_btn,
                 variant === 'telegram' && s.messengers_btnTelegram,
-                variant === 'whatsapp' && s.messengers_btnWhatsApp,
+                variant === 'whatsapp' && s.messengers_btnWhatsApp
               )}
             >
               <Icon className={s.messengers_btnIcon} aria-hidden />
