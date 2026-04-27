@@ -283,7 +283,7 @@ section {
 }
 
 .simple-page {
-  color: #7a7b7a;
+  line-height: 1.4;
   letter-spacing: normal;
 
   @media (width <= 739.98px) {
@@ -318,6 +318,45 @@ section {
   &--centered {
     text-align: center;
   }
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &--invoice {
+    td:not([colspan], :nth-child(2)) {
+      text-align: center;
+    }
+  }
+
+  &--price {
+    td:not([colspan], :nth-child(2)) {
+      text-align: center;
+    }
+  }
+
+  th,
+  td {
+    padding: 10px;
+    border: solid 1px #000;
+  }
+
+  p {
+    margin-block: 0;
+
+    &:not(:first-child) {
+      margin-top: 0.5em;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.table-container {
+  overflow-x: auto;
 }
 
 .container {
