@@ -174,5 +174,49 @@
   "Thankyou": {
     "title": "Gracias por su solicitud",
     "content": "Nuestro responsable se pondrá en contacto con usted en breve."
+  },
+  "Confirmation": {
+    "metaTitle": "Confirmación de disponibilidad | Cita Master",
+    "metaDescription": "Confirme que la búsqueda de cita sigue siendo relevante y que está listo para presentar los documentos pronto.",
+    "eyebrow": "Aprobación de cita",
+    "title": "Confirme que la búsqueda sigue siendo relevante",
+    "description": "Ha llegado su turno y empezamos a trabajar con su solicitud. La cita puede ser incluso para mañana, por eso confirme que la búsqueda sigue siendo relevante, que está listo para acudir a la presentación de documentos y que tiene preparado el paquete de documentos.",
+    "fields": {
+      "clientName": "Cliente",
+      "docNumber": "Número de documento",
+      "service": "Servicio",
+      "answer": "Estado de la respuesta"
+    },
+    "answer": {
+      "pending": "Esperando confirmación",
+      "confirmed": "Relevante",
+      "declined": "No relevante"
+    },
+    "actions": {
+      "hint": "Su respuesta se enviará al gestor inmediatamente.",
+      "confirm": "Sí, relevante",
+      "decline": "No relevante",
+      "submitting": "Enviando..."
+    },
+    "results": {
+      "confirmed": "Gracias, hemos recibido su confirmación. El gestor continuará trabajando en la cita.",
+      "declined": "Ha rechazado la búsqueda de cita, por lo que no la continuaremos. Si ha cambiado de opinión, póngase en contacto con nuestros gestores.",
+      "alreadyAnswered": "La respuesta ya fue recibida anteriormente",
+      "expiredTitle": "Este enlace ha caducado",
+      "expired": "Este enlace ha caducado. Si la solicitud sigue siendo relevante, póngase en contacto con nuestros gestores."
+    },
+    "errors": {
+      "title": "Confirmación no disponible",
+      "config": "El servicio de confirmación no está disponible temporalmente.",
+      "bad_request": "Enlace de confirmación incorrecto.",
+      "unauthorized": "El servicio de confirmación rechazó el token de acceso.",
+      "not_found": "El enlace está inactivo o no se encontró ninguna confirmación con este identificador.",
+      "too_many_requests": "Demasiadas solicitudes. Inténtelo más tarde.",
+      "server": "El servicio de confirmación no está disponible temporalmente.",
+      "request": "No se pudo completar la solicitud de confirmación.",
+      "network": "El servicio de confirmación no está disponible ahora.",
+      "invalid_response": "El servicio de confirmación devolvió una respuesta incorrecta.",
+      "unknown_error": "Algo salió mal. Inténtelo de nuevo más tarde."
+    }
   }
 }

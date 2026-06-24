@@ -174,5 +174,49 @@
   "Thankyou": {
     "title": "Thank you for your application!",
     "content": "Our manager will contact you shortly."
+  },
+  "Confirmation": {
+    "metaTitle": "Readiness confirmation | Cita Master",
+    "metaDescription": "Confirm that the appointment search is still relevant and that you are ready to submit documents soon.",
+    "eyebrow": "Appointment approval",
+    "title": "Confirm that the search is still relevant",
+    "description": "Your turn has come, and we are taking your request into work. The appointment may be as soon as tomorrow, so please confirm that the search is still relevant, you are ready to come for document submission, and your document package is prepared.",
+    "fields": {
+      "clientName": "Client",
+      "docNumber": "Document number",
+      "service": "Service",
+      "answer": "Answer status"
+    },
+    "answer": {
+      "pending": "Waiting for confirmation",
+      "confirmed": "Relevant",
+      "declined": "Not relevant"
+    },
+    "actions": {
+      "hint": "Your answer will be sent to the manager immediately.",
+      "confirm": "Yes, relevant",
+      "decline": "Not relevant",
+      "submitting": "Sending..."
+    },
+    "results": {
+      "confirmed": "Thank you, your confirmation has been received. The manager will continue working on the appointment.",
+      "declined": "You declined the appointment search, so we will not continue it. If you changed your mind, please contact our managers.",
+      "alreadyAnswered": "The answer has already been received",
+      "expiredTitle": "This link has expired",
+      "expired": "This link has expired. If the request is still relevant, please contact our managers."
+    },
+    "errors": {
+      "title": "Confirmation unavailable",
+      "config": "The confirmation service is temporarily unavailable.",
+      "bad_request": "Invalid confirmation link.",
+      "unauthorized": "The confirmation service rejected the access token.",
+      "not_found": "The link is inactive or no confirmation was found for this identifier.",
+      "too_many_requests": "Too many requests. Please try again later.",
+      "server": "The confirmation service is temporarily unavailable.",
+      "request": "Could not complete the confirmation request.",
+      "network": "The confirmation service is unavailable right now.",
+      "invalid_response": "The confirmation service returned an invalid response.",
+      "unknown_error": "Something went wrong. Please try again later."
+    }
   }
 }
