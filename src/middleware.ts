@@ -5,11 +5,14 @@ import { routing } from './i18n/routing'
 const intlMiddleware = createMiddleware(routing)
 
 export default function middleware(request) {
-  const cfmMatch = request.nextUrl.pathname.match(/^\/cfm\/([^/]+)\/?$/)
+  const cfmMatch = request.nextUrl.pathname.match(
+    /^\/(?:([^/]+)\/)?cfm\/([^/]+)\/?$/
+  )
+  const locale = cfmMatch?.[1] || routing.defaultLocale
 
-  if (cfmMatch) {
+  if (cfmMatch && routing.locales.includes(locale)) {
     const url = request.nextUrl.clone()
-    url.pathname = `/uk/confirmation/${cfmMatch[1]}`
+    url.pathname = `/${locale}/confirmation/${cfmMatch[2]}`
 
     return NextResponse.rewrite(url)
   }

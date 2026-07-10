@@ -38,6 +38,42 @@ const getAnswerLabel = (t, answer) => {
 const getAnsweredMessage = (t, answer) =>
   answer ? t('results.confirmed') : t('results.declined')
 
+const formatTimeframeDate = (timestamp) => {
+  const date = new Date(Number(timestamp) * 1000)
+
+  if (
+    timestamp === null ||
+    timestamp === undefined ||
+    Number.isNaN(date.getTime())
+  ) {
+    return null
+  }
+
+  const day = String(date.getUTCDate()).padStart(2, '0')
+  const month = String(date.getUTCMonth() + 1).padStart(2, '0')
+
+  return `${day}.${month}`
+}
+
+const getTimeframeLabel = (t, dateFrom, dateTo) => {
+  const from = formatTimeframeDate(dateFrom)
+  const to = formatTimeframeDate(dateTo)
+
+  if (from && to) {
+    return t('timeframe.range', { from, to })
+  }
+
+  if (from) {
+    return t('timeframe.from', { from })
+  }
+
+  if (to) {
+    return t('timeframe.to', { to })
+  }
+
+  return null
+}
+
 const notFoundErrorCodes = new Set(['bad_request', 'not_found'])
 
 export async function generateMetadata({ params }) {
@@ -120,6 +156,9 @@ export default async function ConfirmationPage({ params, searchParams }) {
   const isExpired = data?.expired === true
   const hasAnswer = data?.clientAnswer === true || data?.clientAnswer === false
   const isFinalState = isExpired || hasAnswer
+  const timeframeLabel = data
+    ? getTimeframeLabel(t, data.timeframeDateFrom, data.timeframeDateTo)
+    : null
 
   return (
     <section className={clsx('container', 'simple-page', s.confirmation)}>
@@ -153,6 +192,15 @@ export default async function ConfirmationPage({ params, searchParams }) {
               <dt className={s.confirmation_label}>{t('fields.service')}</dt>
               <dd className={s.confirmation_value}>{data.service || '-'}</dd>
             </div>
+
+            {timeframeLabel && (
+              <div className={s.confirmation_row}>
+                <dt className={s.confirmation_label}>
+                  {t('fields.timeframe')}
+                </dt>
+                <dd className={s.confirmation_value}>{timeframeLabel}</dd>
+              </div>
+            )}
 
             <div className={s.confirmation_row}>
               <dt className={s.confirmation_label}>{t('fields.answer')}</dt>

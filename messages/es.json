@@ -185,7 +185,13 @@
       "clientName": "Cliente",
       "docNumber": "Número de documento",
       "service": "Servicio",
+      "timeframe": "Período de búsqueda",
       "answer": "Estado de la respuesta"
+    },
+    "timeframe": {
+      "range": "{from} - {to} (ambos inclusive)",
+      "from": "desde el {from} (inclusive)",
+      "to": "hasta el {to} (inclusive)"
     },
     "answer": {
       "pending": "Esperando confirmación",
