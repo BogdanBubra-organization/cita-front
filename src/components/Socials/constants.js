@@ -1,7 +1,7 @@
 import Telegram from '@/assets/icons/telegram.svg'
 import Instagram from '@/assets/icons/instagram.svg'
 
-export const TELEGRAM_LINK = 'https://t.me/cita_master_bot'
+export const TELEGRAM_LINK = 'https://t.me/Cita_Master'
 
 const SOCIALS = [
   {
