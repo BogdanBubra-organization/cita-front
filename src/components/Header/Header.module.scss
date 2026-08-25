@@ -16,6 +16,10 @@
     border: solid 1px #8e8e8e;
     border-radius: 50px;
 
+    @media (width >= 1200px) {
+      column-gap: 16px;
+    }
+
     @media (width >= 740px) {
       margin-top: 32px;
     }

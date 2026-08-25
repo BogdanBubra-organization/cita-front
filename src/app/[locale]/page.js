@@ -6,6 +6,7 @@ import About from '@/components/About'
 import Advantages from '@/components/Advantages'
 import Services from '@/components/Services'
 import Testimonials from "@/components/Testimonials";
+import Contacts from '@/components/Contacts'
 
 export default async function Home( {params} ) {
 	const {locale} = await params
@@ -21,6 +22,7 @@ export default async function Home( {params} ) {
 			<Services/>
 			<FAQ/>
 			<Testimonials />
+			<Contacts />
 			<Order/>
 		</>
 	)

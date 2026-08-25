@@ -31,7 +31,11 @@ const Menu = ({ handleClose, variant }) => {
       label: t('reviews'),
       link: LINKS.testimonials,
       isAnchor: false
-    }
+    },
+    {
+      label: t('contacts'),
+      link: '#contacts',
+    },
   ]
 
   return (

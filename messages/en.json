@@ -29,7 +29,8 @@
     "advantages": "Our advantages",
     "services": "Services",
     "faq": "FAQ",
-    "reviews": "Testimonials"
+    "reviews": "Testimonials",
+    "contacts": "Contacts"
   },
   "Hero": {
     "title": "Professional Support in Visa Matters",
@@ -139,6 +140,21 @@
         "a": "Under no circumstances! We do not require any prepayment for our services. Payment is made only after the service is provided — only after you personally verify the availability and accessibility of the \"sita\" on the official website of the Extranjería (migration service)."
       }
     ]
+  },
+  "Contacts": {
+    "title": "Contacts",
+    "description": "Choose a convenient way to reach us or follow our social media",
+    "soon": "Coming soon",
+    "items": {
+      "telegram": "Telegram",
+      "telegramChannel": "Telegram channel",
+      "telegramChat": "Telegram chat",
+      "whatsapp": "WhatsApp",
+      "tiktok": "TikTok",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
   },
   "Order": {
     "title": "Get a consultation",

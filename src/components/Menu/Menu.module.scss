@@ -13,7 +13,7 @@
 
   &.header {
     @media (width >= 1200px) {
-      column-gap: 6px;
+      column-gap: 0;
     }
 
     @media (width <= 1199.98px) {
@@ -29,6 +29,7 @@
 
       @media (width >= 1200px) {
         padding-block: 8px;
+        padding-inline: 8px;
       }
 
       @media (width <= 1199.98px) {

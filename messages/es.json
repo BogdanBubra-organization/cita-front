@@ -29,7 +29,8 @@
     "advantages": "Nuestras ventajas",
     "services": "Servicios",
     "faq": "FAQ",
-    "reviews": "Testimonios"
+    "reviews": "Testimonios",
+    "contacts": "Contactos"
   },
   "Hero": {
     "title": "Asistencia Profesional en Trámites de Visa",
@@ -139,6 +140,21 @@
         "a": "¡De ninguna manera! No solicitamos ningún pago por adelantado por nuestros servicios. El pago se realiza únicamente después de que el servicio haya sido proporcionado, y solo después de que usted mismo haya verificado la disponibilidad y accesibilidad de la cita en el sitio web oficial de Extranjería (servicio de migración)."
       }
     ]
+  },
+  "Contacts": {
+    "title": "Contactos",
+    "description": "Elija la forma más cómoda de contactarnos o síganos en redes sociales",
+    "soon": "Próximamente",
+    "items": {
+      "telegram": "Telegram",
+      "telegramChannel": "Canal de Telegram",
+      "telegramChat": "Chat de Telegram",
+      "whatsapp": "WhatsApp",
+      "tiktok": "TikTok",
+      "facebook": "Facebook",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
   },
   "Order": {
     "title": "Obtener una consulta",
