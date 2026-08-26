@@ -34,7 +34,8 @@ const Menu = ({ handleClose, variant }) => {
     },
     {
       label: t('contacts'),
-      link: '#contacts',
+      link: LINKS.contacts,
+      isAnchor: false
     },
   ]
 
