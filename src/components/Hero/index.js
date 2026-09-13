@@ -2,7 +2,6 @@ import React from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
-import Button from '../Button'
 import Socials from '../Socials'
 import BtnPopup from '../BtnPopup'
 import calendar from '@/assets/img/calendar.svg?url'
@@ -24,18 +23,20 @@ const Hero = () => {
           </h1>
 
           <div className={s.hero_descr}>
-            {descr.map((item, index) => (
-              <p key={index} className={s.hero_descr_p}>
-                {item}
-              </p>
-            ))}
+            <p>{descr.intro}</p>
+
+            <ul className={s.hero_descr_list}>
+              {descr.list.map(({ title, text }) => (
+                <li key={title}>
+                  <strong>{title}</strong> — {text}
+                </li>
+              ))}
+            </ul>
+
+            <p>{descr.outro}</p>
           </div>
 
           <div className={s.hero_btns}>
-            <Button variant="secondary" href="#order">
-              {t('cta')}
-            </Button>
-
             <BtnPopup />
           </div>
 

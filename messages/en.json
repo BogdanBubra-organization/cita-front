@@ -34,44 +34,59 @@
   },
   "Hero": {
     "title": "Professional Support in Visa Matters",
-    "descr": [
-      "We provide visa services to our clients, which include: consulting, assistance in preparing documents, and help with scheduling online appointments at immigration offices, with follow-up support during document submission. At a time when every minute can be important, our service frees you from days of waiting, stress, and uncertainty.",
-      "Our company is a team of professionals who work for you. We know all the intricacies of visa processes, so we take care of all the bureaucratic work."
-    ],
+    "descr": {
+      "intro": "We help you secure an appointment (Cita) quickly and prepare for your submission:",
+      "list": [
+        {
+          "title": "Cita booking",
+          "text": "we find and reserve the nearest available date at Extranjería or the Police"
+        },
+        {
+          "title": "Category selection",
+          "text": "we determine the right service type for your situation to help avoid rejection"
+        },
+        {
+          "title": "Data verification",
+          "text": "we check and accurately complete all application forms"
+        },
+        {
+          "title": "Support",
+          "text": "we provide step-by-step guidance and stay in touch until your appointment"
+        }
+      ],
+      "outro": "You receive a confirmed official appointment on a convenient date without spending time searching for one yourself."
+    },
     "cta": "Send a request"
   },
   "About": {
-    "title": "Our Company – <br></br>Your Trusted Partner in Migration Solutions",
+    "title": "Cita Master - your trusted partner in resolving migration matters",
     "stats1": "clients in the last month",
     "stats2": "clients in total",
-    "lead": "Cita Master is a team that provides professional visa services to its clients. We understand how difficult it can be to do everything on your own, which is why we created a service that relieves you of this burden and guarantees results.",
-    "info": {
-      "main": [
-        "We strive to help people who find themselves in difficult circumstances to receive advice on visa matters and access important services without unnecessary problems. Our service was created with an understanding of the needs of those facing migration challenges and is aimed at simplifying this process.",
-        "Our team monitors appointment availability in real-time to secure the date you need as quickly as possible. From consultation to confirmation, we stay connected with you, addressing all your questions along the way.",
-        "Transparent pricing with no hidden fees or upfront payments. Personalized service that considers your preferences for region, type of service, and urgency."
-      ],
-      "extra": [
-        "We operate legally, in full compliance with all regulations, with clear and transparent terms.",
-        "Every client matters to us, and we go above and beyond to exceed your expectations.",
-        "Our team has extensive experience with Migration matters and knows how to make the booking process fast and efficient.",
-        "Officially registered company adhering to all legal standards.",
-        "A clear service agreement prepared by top legal experts.",
-        "Secure payment methods through trusted banking systems.",
-        "Over 2,000 satisfied clients who trust us with their Migration needs."
-      ],
-      "more": "Show more",
-      "less": "Show less"
-    }
+    "descr": "A team of experienced managers who thoroughly understand how migration services operate and the specifics of booking appointment slots. We work entirely officially under a public offer agreement prepared by lawyers, guaranteeing the protection of your personal data and transparent payments through trusted banking systems. Our specialists save you time by providing support from your first inquiry through to successfully securing the required appointment."
   },
   "Advantages": {
     "title": "Our Advantages",
     "list": [
-      "You no longer need to constantly refresh the Migration portal or spend time searching for available slots. We’ll handle it for you!",
-      "We work to ensure that you receive the service you need as quickly as possible. In most cases, it takes only 2–5 business days, depending on the type of request.",
-      "No hidden fees or prepayments. Payment is made only after the service is successfully completed.",
-      "We operate officially, with clear contractual terms, ensuring the confidentiality of your data.",
-      "Our specialists are always available to answer your questions and provide consultation."
+      {
+        "title": "Time savings",
+        "descr": "No need to spend hours refreshing the Extranjería website. We monitor available slots and book the date you need."
+      },
+      {
+        "title": "Fast results (from 2 days)",
+        "descr": "On average, the process takes 2 to 5 business days, depending on the service type and region."
+      },
+      {
+        "title": "Payment upon result",
+        "descr": "No hidden fees or prepayments. You pay only after your appointment has been successfully confirmed."
+      },
+      {
+        "title": "100% official and secure",
+        "descr": "We work under a clear contract and guarantee the complete security and confidentiality of your personal data."
+      },
+      {
+        "title": "24/7 ongoing support",
+        "descr": "Our specialists are always available to answer your questions and guide you through every step."
+      }
     ]
   },
   "Testimonials": {

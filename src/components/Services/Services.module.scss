@@ -54,7 +54,7 @@
 
   &_item {
     display: grid;
-    align-content: space-between;
+    align-content: start;
     counter-increment: services;
     background-color: #f5f5f5;
     border-radius: 15px;
@@ -129,6 +129,11 @@
 
   &_descr {
     font-size: 16px;
+
+    ul {
+      display: grid;
+      gap: 0.5em;
+    }
 
     li {
       position: relative;

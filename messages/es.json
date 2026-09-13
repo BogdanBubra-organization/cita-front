@@ -34,44 +34,59 @@
   },
   "Hero": {
     "title": "Asistencia Profesional en Trámites de Visa",
-    "descr": [
-      "Ofrecemos servicios de visado a nuestros clientes, que incluyen: asesoramiento, ayuda en la preparación de documentos y asistencia en la gestión de citas en línea para los servicios de extranjería, con acompañamiento posterior durante la presentación de los documentos. En un momento en el que cada minuto puede ser importante, nuestro servicio le libera de días de espera, estrés e incertidumbre.",
-      "Nuestra empresa es un equipo de profesionales que trabaja para usted. Conocemos todos los matices de los procesos de visado, por lo que asumimos toda la parte burocrática del trabajo."
-    ],
+    "descr": {
+      "intro": "Le ayudamos a conseguir rápidamente una cita y a prepararse para presentar la documentación:",
+      "list": [
+        {
+          "title": "Reserva de cita",
+          "text": "buscamos y reservamos la fecha disponible más próxima en Extranjería o la Policía"
+        },
+        {
+          "title": "Elección de categoría",
+          "text": "determinamos el tipo de trámite adecuado para su situación para evitar rechazos"
+        },
+        {
+          "title": "Revisión de datos",
+          "text": "comprobamos y cumplimentamos correctamente todos los formularios"
+        },
+        {
+          "title": "Acompañamiento",
+          "text": "le damos instrucciones paso a paso y seguimos en contacto hasta el día de su cita"
+        }
+      ],
+      "outro": "Recibe una cita oficial confirmada en una fecha conveniente sin perder tiempo buscándola por su cuenta."
+    },
     "cta": "Rellene la solicitud"
   },
   "About": {
-    "title": "Nuestra Empresa — <br></br>Tu Socio de Confianza en Soluciones de Inmigración",
+    "title": "Cita Master - su socio de confianza para resolver asuntos migratorios",
     "stats1": "clientes en el último mes",
     "stats2": "clientes en total",
-    "lead": "Cita Master es un equipo que ofrece servicios de visado profesionales a sus clientes. Entendemos lo difícil que puede ser hacerlo todo por cuenta propia, por eso hemos creado un servicio que le libera de esta carga y le garantiza resultados.",
-    "info": {
-      "main": [
-        "Nos esforzamos por ayudar a las personas que se encuentran en circunstancias difíciles a obtener asesoramiento sobre cuestiones de visado y acceso a servicios importantes sin complicaciones innecesarias. Nuestro servicio fue creado entendiendo las necesidades de quienes enfrentan desafíos migratorios y está orientado a simplificar este proceso.",
-        "Nuestro equipo monitorea la disponibilidad de citas en tiempo real para asegurar la fecha que necesitas lo más rápido posible. Desde la consulta hasta la confirmación, permanecemos en contacto para resolver todas tus dudas.",
-        "Precios transparentes, sin comisiones ocultas ni pagos anticipados. Servicio personalizado que considera tus preferencias de región, tipo de servicio y urgencia."
-      ],
-      "extra": [
-        "Operamos legalmente, cumpliendo con todas las normativas, con términos claros y transparentes.",
-        "Cada cliente es importante para nosotros, y hacemos todo lo posible por superar tus expectativas.",
-        "Nuestro equipo tiene amplia experiencia en asuntos de inmigración y sabe cómo hacer que el proceso de reserva sea rápido y eficiente.",
-        "Empresa registrada oficialmente que cumple con todos los estándares legales.",
-        "Contrato de servicio claro, preparado por los mejores expertos legales.",
-        "Métodos de pago seguros a través de sistemas bancarios confiables.",
-        "Más de 2,000 clientes satisfechos que confían en nosotros para sus necesidades de inmigración."
-      ],
-      "more": "Mostrar más",
-      "less": "Mostrar menos"
-    }
+    "descr": "Un equipo de gestores con experiencia que conoce a fondo los matices del funcionamiento de los servicios de extranjería y las particularidades de la reserva de citas. Trabajamos de forma totalmente oficial mediante un contrato de oferta preparado por abogados, garantizando la protección de sus datos personales y pagos transparentes a través de sistemas bancarios de confianza. Nuestros especialistas le ahorran tiempo y le acompañan desde la primera consulta hasta la obtención satisfactoria de la cita necesaria."
   },
   "Advantages": {
     "title": "Nuestras ventajas",
     "list": [
-      "Ya no necesitas actualizar constantemente el portal de inmigración ni dedicar tiempo a buscar citas disponibles. ¡Nosotros lo hacemos por ti!",
-      "Trabajamos para que recibas el servicio que necesitas lo más rápido posible. En la mayoría de los casos, tarda solo de 2 a 5 días hábiles, según el tipo de trámite.",
-      "Sin tarifas ocultas ni pagos por adelantado. El pago se realiza únicamente después de completar el servicio con éxito.",
-      "Operamos de manera oficial, con términos contractuales claros, y garantizamos la confidencialidad de tus datos.",
-      "Nuestros especialistas están siempre disponibles para responder tus preguntas y brindarte asesoramiento."
+      {
+        "title": "Ahorro de tiempo",
+        "descr": "No necesita pasar horas actualizando la página web de Extranjería. Supervisamos las citas disponibles y reservamos la fecha que necesita."
+      },
+      {
+        "title": "Resultado rápido (desde 2 días)",
+        "descr": "Por término medio, el proceso tarda entre 2 y 5 días laborables, según el tipo de servicio y la región."
+      },
+      {
+        "title": "Pago por resultados",
+        "descr": "Sin comisiones ocultas ni pagos por adelantado. Solo paga después de que su cita se haya confirmado correctamente."
+      },
+      {
+        "title": "100 % oficial y seguro",
+        "descr": "Trabajamos con un contrato claro y garantizamos la total seguridad y confidencialidad de sus datos personales."
+      },
+      {
+        "title": "Asistencia permanente 24/7",
+        "descr": "Nuestros especialistas están siempre disponibles para responder sus preguntas y orientarle en cada paso."
+      }
     ]
   },
   "Testimonials": {

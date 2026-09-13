@@ -13,23 +13,23 @@ const Advantages = () => {
   const LIST = [
     {
       Icon: Reload,
-      descr: t('list.0'),
+      ...t.raw('list.0'),
     },
     {
       Icon: Calendar,
-      descr: t('list.1'),
+      ...t.raw('list.1'),
     },
     {
       Icon: List,
-      descr: t('list.2'),
+      ...t.raw('list.2'),
     },
     {
       Icon: Docs,
-      descr: t('list.3'),
+      ...t.raw('list.3'),
     },
     {
       Icon: Chat,
-      descr: t('list.4'),
+      ...t.raw('list.4'),
     },
   ]
 
@@ -41,7 +41,7 @@ const Advantages = () => {
         </h2>
 
         <ul className={s.advantages_list}>
-          {LIST.map(({ Icon, descr }, i) => (
+          {LIST.map(({ Icon, title, descr }, i) => (
             <li
               key={i}
               data-aos="fade-up"
@@ -50,7 +50,10 @@ const Advantages = () => {
             >
               <Icon className={s.advantages_icon} />
 
-              {descr}
+              <div className={s.advantages_content}>
+                <strong className={s.advantages_item_title}>{title}</strong>
+                <p>{descr}</p>
+              </div>
             </li>
           ))}
         </ul>

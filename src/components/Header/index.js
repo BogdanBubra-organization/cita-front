@@ -7,6 +7,7 @@ import useClickOutside from '@/hooks/useClickOutside'
 import logo from '@/assets/img/logo.svg?url'
 import Hamb from '@/assets/icons/hamb.svg'
 import Close from '@/assets/icons/close.svg'
+import Telegram from '@/assets/icons/telegram.svg'
 import LangSwitcher from '../LangSwitcher'
 import Menu from '../Menu'
 import LangList from '../LangList'
@@ -62,11 +63,31 @@ const Header = () => {
           <Menu variant="header" handleClose={handleNavClose} />
 
           <div className={s.header_nav_bottom}>
+            <a
+              aria-label="Telegram"
+              target="_blank"
+              href="https://t.me/cita_master"
+              rel="noreferrer"
+              className={s.header_telegram}
+            >
+              <Telegram />
+            </a>
+
             <LangList handleClose={handleNavClose} />
 
             <BtnPopup handleClose={handleNavClose} />
           </div>
         </div>
+
+        <a
+          aria-label="Telegram"
+          target="_blank"
+          href="https://t.me/cita_master"
+          rel="noreferrer"
+          className={clsx(s.header_telegram, s.header_telegram_main)}
+        >
+          <Telegram />
+        </a>
 
         <LangSwitcher className={s.header_lang} />
 
