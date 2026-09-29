@@ -212,7 +212,11 @@
     "metaDescription": "Confirme que la búsqueda de cita sigue siendo relevante y que está listo para presentar los documentos pronto.",
     "eyebrow": "Aprobación de cita",
     "title": "Confirme que la búsqueda sigue siendo relevante",
-    "description": "Ha llegado su turno y empezamos a trabajar con su solicitud. La cita puede ser incluso para mañana, por eso confirme que la búsqueda sigue siendo relevante, que está listo para acudir a la presentación de documentos y que tiene preparado el paquete de documentos.",
+    "description": {
+      "reminder": "Le recordamos que estamos buscando una cita para usted. La cita puede ser <strong>para mañana</strong> o para cualquier otro día laborable.",
+      "confirm": "Si tiene preparado el paquete de documentos y está <strong>listo para acudir a presentarlos</strong> a partir de mañana, confírmelo seleccionando «<strong>{confirmLabel}</strong>».",
+      "decline": "Si sus <strong>planes han cambiado</strong>, seleccione «<strong>{declineLabel}</strong>» y nos pondremos en contacto con usted para aclarar los detalles."
+    },
     "fields": {
       "clientName": "Cliente",
       "docNumber": "Número de documento",

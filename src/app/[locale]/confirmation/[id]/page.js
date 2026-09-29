@@ -166,7 +166,25 @@ export default async function ConfirmationPage({ params, searchParams }) {
         <div className={s.confirmation_header}>
           <p className={s.confirmation_eyebrow}>{t('eyebrow')}</p>
           <h1 className={clsx('h2', s.confirmation_title)}>{t('title')}</h1>
-          <p className="lead">{t('description')}</p>
+          <div className={clsx('lead', s.confirmation_description)}>
+            <p>
+              {t.rich('description.reminder', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </p>
+            <p>
+              {t.rich('description.confirm', {
+                confirmLabel: t('actions.confirm'),
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </p>
+            <p>
+              {t.rich('description.decline', {
+                declineLabel: t('actions.decline'),
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </p>
+          </div>
         </div>
       )}
 

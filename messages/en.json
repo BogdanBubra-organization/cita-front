@@ -212,7 +212,11 @@
     "metaDescription": "Confirm that the appointment search is still relevant and that you are ready to submit documents soon.",
     "eyebrow": "Appointment approval",
     "title": "Confirm that the search is still relevant",
-    "description": "Your turn has come, and we are taking your request into work. The appointment may be as soon as tomorrow, so please confirm that the search is still relevant, you are ready to come for document submission, and your document package is prepared.",
+    "description": {
+      "reminder": "We remind you that we are searching for an appointment for you. The appointment may be <strong>as soon as tomorrow</strong> or on any other business day.",
+      "confirm": "If you have your document package ready and are <strong>prepared to attend the submission</strong> starting tomorrow, please confirm by selecting “<strong>{confirmLabel}</strong>”.",
+      "decline": "If your <strong>plans have changed</strong>, select “<strong>{declineLabel}</strong>”, and we will contact you to clarify the details."
+    },
     "fields": {
       "clientName": "Client",
       "docNumber": "Document number",

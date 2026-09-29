@@ -27,6 +27,24 @@
     letter-spacing: normal;
   }
 
+  & &_description {
+    display: grid;
+    row-gap: 1em;
+    font-size: 18px;
+
+    > p {
+      margin: 0;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+
+    @media (width <= 739px) {
+      font-size: 14px;
+    }
+  }
+
   &_panel {
     display: grid;
     width: min(100%, 840px);
