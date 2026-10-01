@@ -27,7 +27,7 @@
       }
 
       &[data-state='error'] {
-        border-color: #eb1e23;
+        border-color: #e31d22;
       }
     }
   }
@@ -69,7 +69,7 @@
 
     &:has([data-state='error']) {
       &::before {
-        background-color: #eb1e23;
+        background-color: #e31d22;
       }
     }
 
@@ -130,7 +130,7 @@
 
     &:hover,
     &:focus-visible {
-      color: #eb1e23;
+      color: #e31d22;
     }
   }
 

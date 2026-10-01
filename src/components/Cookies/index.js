@@ -14,7 +14,27 @@ const Cookies = () => {
   useEffect(() => {
     const consent = localStorage.getItem('cookieConsent')
     setStatus(consent || null)
-    setShow(!consent)
+
+    if (consent) return
+
+    const events = ['pointerdown', 'keydown', 'wheel', 'touchstart']
+
+    const removeListeners = () => {
+      events.forEach((event) => {
+        window.removeEventListener(event, handleInteraction)
+      })
+    }
+
+    const handleInteraction = () => {
+      setShow(true)
+      removeListeners()
+    }
+
+    events.forEach((event) => {
+      window.addEventListener(event, handleInteraction, { passive: true })
+    })
+
+    return removeListeners
   }, [])
 
   const handleConsent = (answer) => {
@@ -48,7 +68,7 @@ const Cookies = () => {
         </div>
       </div>
 
-      <GoogleTagManager status={status} />
+      {status === 'granted' && <GoogleTagManager />}
     </>
   )
 }

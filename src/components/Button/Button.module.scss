@@ -24,15 +24,15 @@
 
   &--primary {
     color: #fff;
-    background-color: #eb1e23;
-    border-color: #eb1e23;
-    box-shadow: 0 4px 11px rgba(235, 30, 35, 50%);
+    background-color: #e31d22;
+    border-color: #e31d22;
+    box-shadow: 0 4px 11px rgba(227, 29, 34, 50%);
 
     &:hover,
     &:focus-visible {
-      background-color: #ff393e;
-      border-color: #ff393e;
-      box-shadow: 0 4px 19px rgba(235, 30, 35, 80%);
+      background-color: #d91c20;
+      border-color: #d91c20;
+      box-shadow: 0 4px 19px rgba(217, 28, 32, 80%);
     }
 
     &[disabled] {

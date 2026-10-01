@@ -114,7 +114,7 @@
 
     &::before {
       font-weight: 500;
-      color: #eb1e23;
+      color: #e31d22;
       content: counter(services, decimal-leading-zero);
 
       @media (width >= 740px) {

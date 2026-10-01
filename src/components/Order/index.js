@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
-import Form from '../Form'
+import DeferredForm from '../Form/DeferredForm'
 import s from './Order.module.scss'
 
 const Order = () => {
@@ -20,7 +20,7 @@ const Order = () => {
           </p>
         </div>
 
-        <Form variant="order" />
+        <DeferredForm />
       </div>
     </section>
   )

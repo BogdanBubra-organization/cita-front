@@ -1,0 +1,11 @@
+.placeholder {
+  min-height: 244px;
+
+  @media (width >= 740px) {
+    min-height: 213px;
+  }
+
+  @media (width >= 1200px) {
+    min-height: 291px;
+  }
+}

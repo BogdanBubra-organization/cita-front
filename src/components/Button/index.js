@@ -13,6 +13,7 @@ const Button = ({
   children,
   onClick,
   className,
+  ...props
 }) => {
   if (href) {
     return (
@@ -32,6 +33,7 @@ const Button = ({
 
   return (
     <button
+      {...props}
       type={type}
       disabled={disabled}
       onClick={onClick}

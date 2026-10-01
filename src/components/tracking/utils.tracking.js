@@ -18,18 +18,6 @@ const getGtag = () => {
   return window.gtag
 }
 
-export const grantConsentForEverything = () => {
-  const gtag = getGtag()
-  if (!gtag) return
-
-  GTM_IDS.forEach((id) => {
-    gtag('consent', 'update', {
-      ad_storage: 'granted',
-      analytics_storage: 'granted',
-    })
-  })
-}
-
 export const pageview = (url) => {
   const gtag = getGtag()
   if (!gtag) return
