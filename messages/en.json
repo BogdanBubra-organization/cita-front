@@ -6,6 +6,16 @@
   "Form": {
     "nameShort": "Name",
     "contact": "Phone",
+    "phone": {
+      "countryCode": "Country code",
+      "spain": "Spain",
+      "ukraine": "Ukraine",
+      "other": "Other country",
+      "otherShort": "Other",
+      "fullNumber": "Number with code",
+      "nationalError": "Enter 9 digits after the country code.",
+      "internationalError": "Enter the full number with the country code, starting with +."
+    },
     "submit": "Send request",
     "submitShort": "Send",
     "success": "Request sent!",

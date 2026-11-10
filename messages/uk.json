@@ -6,6 +6,16 @@
   "Form": {
     "nameShort": "Ім’я",
     "contact": "Номер телефону",
+    "phone": {
+      "countryCode": "Код країни",
+      "spain": "Іспанія",
+      "ukraine": "Україна",
+      "other": "Інша країна",
+      "otherShort": "Інший",
+      "fullNumber": "Номер із кодом",
+      "nationalError": "Введіть 9 цифр після коду країни.",
+      "internationalError": "Введіть повний номер із кодом країни, починаючи з +."
+    },
     "submit": "Надіслати заявку",
     "submitShort": "Надіслати",
     "success": "Заявка відправлена!",

@@ -6,6 +6,16 @@
   "Form": {
     "nameShort": "Nombre",
     "contact": "Número de teléfono",
+    "phone": {
+      "countryCode": "Prefijo del país",
+      "spain": "España",
+      "ukraine": "Ucrania",
+      "other": "Otro país",
+      "otherShort": "Otro",
+      "fullNumber": "Número con prefijo",
+      "nationalError": "Introduzca 9 dígitos después del prefijo del país.",
+      "internationalError": "Introduzca el número completo con el prefijo del país, empezando por +."
+    },
     "submit": "Enviar solicitud",
     "submitShort": "Enviar",
     "success": "¡Solicitud enviada!",

@@ -20,6 +20,10 @@
       font-size: 16px;
     }
 
+    &#{$this}_phone_controls {
+      padding: 0;
+    }
+
     &:not([disabled]) {
       &:hover,
       &:focus-visible {
@@ -29,6 +33,70 @@
       &[data-state='error'] {
         border-color: #e31d22;
       }
+    }
+  }
+
+  &_phone {
+    min-width: 0;
+
+    &_controls {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      overflow: hidden;
+
+      input {
+        min-width: 0;
+        padding: 15px 12px;
+        background-color: transparent;
+
+        &::placeholder {
+          color: #646464;
+        }
+
+        &:focus-visible {
+          background-color: #eee;
+        }
+      }
+    }
+
+    &_code {
+      position: relative;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+      min-width: 96px;
+      padding-inline: 12px;
+      border-right: 1px solid #8e8e8e;
+
+      &::after {
+        width: 7px;
+        height: 7px;
+        content: '';
+        border: solid currentColor;
+        border-width: 0 1px 1px 0;
+        transform: translateY(-2px) rotate(45deg);
+      }
+
+      &:has(select:focus-visible) {
+        background-color: #eee;
+      }
+
+      select {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        font: inherit;
+        cursor: pointer;
+        opacity: 0;
+      }
+    }
+
+    &_error {
+      margin: 6px 12px 0;
+      font-size: 12px;
+      color: #b31519;
     }
   }
 
@@ -141,16 +209,11 @@
 
     @media (width >= 740px) and (width <= 1199.98px) {
       grid-template-columns: repeat(2, 1fr);
+      align-items: start;
     }
 
     @media (width <= 739.98px) {
       row-gap: 12px;
-    }
-
-    #{$this}_field {
-      @media (width <= 739.98px) {
-        padding-inline: 15px;
-      }
     }
 
     #{$this}_check,
@@ -174,7 +237,7 @@
   &.popup {
     row-gap: 12px;
 
-    #{$this}_field {
+    #{$this}_field:not(#{$this}_phone_controls) {
       @media (width <= 739.98px) {
         padding-inline: 31px;
       }

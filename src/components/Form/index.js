@@ -2,11 +2,12 @@
 
 import React, { useState } from 'react'
 import clsx from 'clsx'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { Link, useRouter } from '@/i18n/routing'
 import { useForm } from 'react-hook-form'
 import Button from '../Button'
 import Field from './components/Field'
+import PhoneField, { formatPhoneNumber } from './components/PhoneField'
 import LINKS from '@/constants/links'
 import s from './Form.module.scss'
 
@@ -38,8 +39,10 @@ const Form = ({ variant, handleClose }) => {
 
   const router = useRouter()
   const t = useTranslations('Form')
+  const preferredCode = useLocale() === 'uk' ? '+380' : '+34'
 
   const {
+    control,
     register,
     formState: { errors },
     handleSubmit,
@@ -48,7 +51,7 @@ const Form = ({ variant, handleClose }) => {
     watch,
     reset,
   } = useForm({
-    shouldUnregister: true,
+    defaultValues: { contact: { code: preferredCode, number: '' } },
   })
 
   const handleReset = () => {
@@ -61,8 +64,12 @@ const Form = ({ variant, handleClose }) => {
     setSubmitError('')
     setSucceeded(false)
 
+    const normalizedData = {
+      ...submissionData,
+      contact: formatPhoneNumber(submissionData.contact),
+    }
     const filteredData = Object.fromEntries(
-      Object.entries(submissionData).filter(([_, value]) => {
+      Object.entries(normalizedData).filter(([_, value]) => {
         if (typeof value === 'string') {
           return value.trim() !== ''
         }
@@ -103,20 +110,6 @@ const Form = ({ variant, handleClose }) => {
 
   const isPopup = variant === 'popup'
 
-  const FIELDS = [
-    {
-      name: 'name',
-      placeholder: t('nameShort'),
-    },
-    {
-      name: 'contact',
-      placeholder: t('contact'),
-      inputMode: 'tel',
-      pattern: /^[0-9+\-() ]+$/,
-      sanitize: (value) => value.replace(/[^0-9+\-() ]/g, ''),
-    },
-  ]
-
   return (
     <form
       autoComplete="off"
@@ -125,20 +118,23 @@ const Form = ({ variant, handleClose }) => {
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(s.form, { [s[variant]]: variant })}
     >
-      {FIELDS.map((item, i) => (
-        <Field
-          key={'f' + i}
-          {...item}
-          required={true}
-          register={register}
-          setValue={setValue}
-          trigger={trigger}
-          watch={watch}
-          errors={errors}
-          disabled={submitting || succeeded}
-          className={s.form_field}
-        />
-      ))}
+      <Field
+        name="name"
+        placeholder={t('nameShort')}
+        required
+        register={register}
+        setValue={setValue}
+        trigger={trigger}
+        watch={watch}
+        errors={errors}
+        disabled={submitting || succeeded}
+        className={s.form_field}
+      />
+      <PhoneField
+        control={control}
+        preferredCode={preferredCode}
+        disabled={submitting || succeeded}
+      />
 
       {!isPopup && (LINKS.policy || LINKS.offer) && (
         <label className={s.form_check}>
