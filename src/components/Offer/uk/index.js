@@ -1,10 +1,6 @@
 import React from 'react'
-import { useTranslations } from 'next-intl'
 
-const OfferUK = () => {
-  const t = useTranslations('Offer')
-
-  return (
+const OfferUK = () => (
     <>
         <p style={{ textAlign: 'center' }}>
             <b>
@@ -874,7 +870,6 @@ const OfferUK = () => {
             </table>
         </div>
     </>
-  )
-}
+)
 
 export default OfferUK
